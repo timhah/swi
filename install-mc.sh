@@ -3,10 +3,10 @@
 source /etc/os-release
 
 if [[ $ID == "debian" || $ID == "ubuntu" ]]; then
-    JAVAPKG="openjdk-11-jre-headless"
+    JAVAPKG="openjdk-11-jre"
 
     if [[ $ID == "debian" && $VERSION_ID -ne 10 ]]; then
-        JAVAPKG="openjdk-8-jre-headless"
+        JAVAPKG="sudo apt-get install openjdk-8-jre"
     fi
 
     export DEBIAN_FRONTEND=noninteractive
