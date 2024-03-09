@@ -75,7 +75,7 @@ service nginx restart
 cd ~ || exit 1
 PW=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 12 | head -n 1)
 # mysql -e "UPDATE mysql.user SET authentication_string=PASSWORD('$PW'),host='%',plugin='mysql_native_password' WHERE user='root';FLUSH PRIVILEGES;"
-mysql -e "ALTER USER root@localhost identified by '$PW'";
+mysql -e "ALTER USER root@localhost identified by '$PW';FLUSH PRIVILEGES;"
 
 echo -e "u=root\np=$PW" > mysql.txt
 
